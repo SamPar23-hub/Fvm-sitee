@@ -4,8 +4,3 @@ compatibility_date = "2026-10-01"
 
 [assets]
 directory = "./public"
-
-[[d1_databases]]
-binding = "DB"
-database_name = "fvm-agreements"
-database_id = "3c8b2b54-20f7-4387-9053-029ca72d0ac7"
