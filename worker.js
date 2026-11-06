@@ -8,8 +8,8 @@ export default {
     const p = new URL(req.url).pathname;
     if (p === "/book" || p === "/book/") return Response.redirect("https://shotbyfvm.studiocrafthaus.com/", 302);
     if (p === "/" || p === "/index.html") return new Response(PAGE, { headers: { "content-type": "text/html; charset=utf-8", "cache-control": "public, max-age=300", ...H } });
-    // Private pricing page: not linked anywhere and not indexed. Share the link only with people you want to see it.
-    if (p === "/rates-frdmp3gn" || p === "/rates-frdmp3gn/") return new Response(PRICING, { headers: { "content-type": "text/html; charset=utf-8", "cache-control": "private, max-age=300", "x-robots-tag": "noindex, nofollow", ...H } });
+    // Pricing page at /rates: standalone, not linked from the main site and not indexed. Share the link directly.
+    if (p === "/rates" || p === "/rates/") return new Response(PRICING, { headers: { "content-type": "text/html; charset=utf-8", "cache-control": "private, max-age=300", "x-robots-tag": "noindex, nofollow", ...H } });
     if (p === "/favicon.svg") return new Response(ICON, { headers: { "content-type": "image/svg+xml", ...H } });
     if (p === "/robots.txt") return new Response("User-agent: *\nAllow: /\n", { headers: { "content-type": "text/plain", ...H } });
     return Response.redirect(new URL("/", req.url).toString(), 302);
