@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:url" content="https://shotbyfvm.com/enas">
+<meta property="og:type" content="website">
+<link rel="icon" href="/favicon.svg">
+<title>Enas Latif Proposal</title>
+<meta name="description" content="Two ways to work together: a monthly content bundle or pay per shoot, built around your show, your podcast and Buffalo.">
+<meta property="og:title" content="Enas Latif: your content proposal from shotbyfvm">
+<meta property="og:description" content="Two ways to work together: a monthly content bundle or pay per shoot, built around your show, your podcast and Buffalo.">
+<meta property="og:image" content="https://shotbyfvm.com/enas/og-cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@600;700;800&display=swap">
+<style>
+/* FVM brand. Bands: hero ink, two ways paper, option 1 ink (three steps), option 2 paper (order sheet), ready ink. Mobile first. */
+:root {
+  --ink: #1f1f1d; --ink-2: #2a2926; --cream: #ede4d3; --paper: #f3f2ef;
+  --tan: #d8c7a6; --stone: #b8b0a0; --clay: #c9a98a;
+  --mute-on-ink: #a5a096; --soft-on-ink: #c9c2b4; --mute-on-paper: #64625c; --rule-ink: #3d3b37; --rule-paper: #d3d0c8;
+  --display: "Inter Tight", "Inter", "Helvetica Neue", Arial, sans-serif;
+  --body: "Inter", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--ink); color: var(--cream); font-family: var(--body); font-size: 16px; line-height: 1.5; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+.wrap { max-width: 1080px; margin-inline: auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+.band { padding-block: clamp(56px, 10vw, 112px); }
+.band.paper { background: var(--paper); color: var(--ink); }
+h2 { font-family: var(--display); font-weight: 800; font-size: clamp(36px, 6vw, 64px); letter-spacing: -.045em; line-height: .98; margin: 0; text-wrap: balance; }
+h3, h4, p { margin: 0; }
+:focus-visible { outline: 2px solid var(--cream); outline-offset: 3px; }
+.paper :focus-visible, .chip.solid button:focus-visible { outline-color: var(--ink); }
+[hidden] { display: none !important; }
+
+/* HERO */
+.hero { position: relative; min-height: min(92svh, 860px); display: flex; flex-direction: column; padding-block: 24px 32px; }
+.hero-bg { position: absolute; top: 0; bottom: 0; left: 50%; width: 100vw; margin-left: -50vw; overflow: hidden; background: var(--ink); }
+.hero-bg video { width: 100%; height: 100%; object-fit: cover; object-position: 50% center; display: block; }
+.hero-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(31,31,29,.62) 0%, rgba(31,31,29,.5) 45%, rgba(31,31,29,.86) 100%); transition: opacity 1.4s ease; }
+.wait .hero-bg::after { opacity: 0; }
+.wait .hero > :not(.hero-bg) { opacity: 0; }
+.topbar { display: flex; justify-content: space-between; align-items: center; gap: 16px; position: relative; }
+.topbar .logo { width: 64px; color: var(--cream); }
+.logo { display: block; }
+.topbar .meta { font-size: 14px; font-weight: 500; color: var(--mute-on-ink); text-align: right; }
+.hero-main { margin-block: auto; padding-block: 48px; position: relative; }
+.prepared { font-size: clamp(17px, 2vw, 22px); font-weight: 500; color: var(--mute-on-ink); margin: 0 0 12px; }
+.name { font-family: var(--display); font-weight: 800; font-size: clamp(64px, 15vw, 196px); letter-spacing: -.06em; line-height: .86; margin: 0; }
+.name .line { display: block; overflow: hidden; padding-bottom: .06em; }
+.name .ch { display: inline-block; }
+.rule { height: 2px; background: var(--cream); margin: 28px 0 22px; transform-origin: left; max-width: 520px; }
+.sub { font-size: clamp(17px, 2vw, 22px); margin: 0; }
+.cue { display: inline-flex; align-items: center; gap: 10px; color: var(--mute-on-ink); font-size: 15px; font-weight: 600; text-decoration: none; position: relative; align-self: flex-start; }
+.cue svg { width: 14px; height: 14px; }
+@media (prefers-reduced-motion: no-preference) {
+  .go .name { animation: zoomin 2.2s cubic-bezier(.2,.7,.2,1) both .15s; transform-origin: left center; }
+  .go .hero-bg video { animation: drift 14s ease-out both; }
+  .go .prepared { animation: fade .8s ease both .1s; }
+  .go .rule { animation: wipe 1s cubic-bezier(.7,0,.2,1) both 1.1s; }
+  .go .sub { animation: up .9s cubic-bezier(.2,.8,.2,1) both 1.4s; }
+  .go .topbar { animation: fade 1s ease both 1.6s; }
+  .go .cue { animation: fade 1s ease both 2s; }
+  .go .cue svg { animation: bob 1.8s ease-in-out infinite 2.6s; }
+  .swap { transition: opacity .25s ease; }
+}
+@keyframes rise { from { transform: translateY(105%); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes zoomin { from { opacity: 0; transform: scale(1.12); } to { opacity: 1; transform: none; } }
+@keyframes drift { from { transform: scale(1); } to { transform: scale(1.1); } }
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes wipe { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(4px); } }
+
+/* STEP TILES (two ways, lead path) */
+.tracks { display: grid; gap: 40px; margin-top: 32px; }
+.track-h { font-family: var(--display); font-size: 22px; font-weight: 800; letter-spacing: -.03em; margin-bottom: 12px; }
+.tiles { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.tile { color: var(--ink); padding: 14px 14px 16px; min-height: 132px; display: flex; flex-direction: column; }
+.tile:nth-child(1) { background: var(--cream); }
+.tile:nth-child(2) { background: var(--tan); }
+.tile:nth-child(3) { background: var(--clay); }
+.tile:nth-child(4) { background: var(--stone); }
+.paper .tile:nth-child(1) { background: var(--tan); }
+.paper .tile:nth-child(2) { background: var(--clay); }
+.paper .tile:nth-child(3) { background: var(--stone); }
+.paper .tile:nth-child(4) { background: var(--ink); color: var(--cream); }
+.tile-n { font-family: var(--display); font-size: 32px; font-weight: 800; letter-spacing: -.04em; line-height: 1; margin-bottom: auto; }
+.tile-t { font-size: 17px; font-weight: 700; line-height: 1.25; margin-top: 18px; }
+.tile-d { font-size: 14px; line-height: 1.4; margin-top: 4px; }
+
+/* OPTION 1: three steps */
+.steps { list-style: none; margin: 40px 0 0; padding: 0; }
+.step { border-top: 2px solid var(--cream); padding-block: 20px 48px; }
+.step:last-child { padding-bottom: 0; }
+.step-tag { display: inline-block; font-family: var(--display); font-size: 15px; font-weight: 800; line-height: 1; color: var(--ink); padding: 7px 10px; }
+.step:nth-child(1) .step-tag { background: var(--cream); }
+.step:nth-child(2) .step-tag { background: var(--tan); }
+.step:nth-child(3) .step-tag { background: var(--clay); }
+.step-h { font-family: var(--display); font-size: clamp(28px, 4vw, 38px); font-weight: 800; letter-spacing: -.04em; line-height: 1.05; margin-top: 12px; }
+.step-body { margin-top: 22px; }
+.lead { font-size: 18px; font-weight: 600; line-height: 1.4; max-width: 36ch; }
+.now { display: grid; gap: 8px; margin-top: 22px; }
+.now-card { padding: 20px; }
+.now-card.good { background: var(--cream); color: var(--ink); }
+.now-card.gap { background: var(--ink-2); border: 1px solid var(--rule-ink); }
+.now-card h4 { font-family: var(--display); font-size: 20px; font-weight: 800; letter-spacing: -.02em; margin-bottom: 10px; }
+.now-card ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; }
+.tools { margin-top: 20px; border-top: 1px solid var(--rule-ink); }
+.tool { padding-block: 18px; border-bottom: 1px solid var(--rule-ink); display: grid; gap: 6px; }
+.tool h4 { font-family: var(--display); font-size: 22px; font-weight: 800; letter-spacing: -.03em; line-height: 1.1; }
+.tool-what { color: var(--soft-on-ink); font-size: 15px; }
+.tool-job { font-weight: 700; border-left: 3px solid var(--tan); padding-left: 10px; margin-top: 4px; }
+.month { margin-top: 44px; display: grid; gap: 24px; }
+.sub-h { font-family: var(--display); font-size: 22px; font-weight: 800; letter-spacing: -.03em; }
+.total { font-family: var(--display); font-size: clamp(96px, 14vw, 144px); font-weight: 800; letter-spacing: -.06em; line-height: .86; margin-top: 10px; }
+.total-l { font-family: var(--display); font-size: 22px; font-weight: 800; letter-spacing: -.03em; margin-top: 6px; }
+.total-s { font-size: 14px; color: var(--mute-on-ink); margin-top: 8px; max-width: 30ch; }
+.incl { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--cream); }
+.incl li { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--rule-ink); }
+.incl-r { color: var(--mute-on-ink); text-align: right; font-size: 15px; flex: 0 1 40%; }
+.closing { margin-top: 20px; font-size: 18px; font-weight: 600; max-width: 34ch; }
+
+/* OPTION 2: order sheet */
+.ledger { margin-top: 32px; border-top: 2px solid var(--ink); }
+.lrow { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; padding: 16px 0; border-bottom: 1px solid var(--rule-paper); }
+.lrow h3 { font-family: var(--display); font-size: clamp(22px, 3vw, 30px); font-weight: 800; letter-spacing: -.03em; line-height: 1.1; }
+.lrow p { margin-top: 4px; color: var(--mute-on-paper); font-size: 15px; }
+.amt { font-family: var(--display); font-size: clamp(26px, 3.4vw, 36px); font-weight: 800; letter-spacing: -.04em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.lrow.sm h3 { font-size: 19px; }
+.lrow.sm .amt { font-size: 22px; }
+
+/* READY (last) */
+.ready-top { text-align: center; }
+.toggle { display: inline-grid; grid-template-columns: 1fr 1fr; background: var(--rule-ink); border-radius: 99px; padding: 4px; position: relative; margin-top: 28px; }
+.toggle button { font: inherit; font-weight: 700; font-size: 16px; border: 0; background: none; color: var(--cream); padding: 13px 26px; border-radius: 99px; cursor: pointer; position: relative; z-index: 1; white-space: nowrap; }
+.knob { position: absolute; top: 4px; bottom: 4px; left: 4px; width: calc(50% - 4px); background: var(--cream); border-radius: 99px; }
+.toggle[data-v="3"] .knob { transform: translateX(100%); }
+.toggle button[aria-pressed="true"] { color: var(--ink); }
+@media (hover: hover) {
+  .toggle button { transition: transform .25s cubic-bezier(.2,.8,.2,1), background-color .25s ease, box-shadow .25s ease; }
+  .toggle button[aria-pressed="false"]:hover { transform: translateY(-3px); background: rgba(237,228,211,.16); box-shadow: 0 10px 20px rgba(0,0,0,.3); }
+}
+@media (prefers-reduced-motion: reduce) { .toggle button { transition: none; } .toggle button[aria-pressed="false"]:hover { transform: none; } }
+.toggle small { display: block; font-size: 12px; font-weight: 500; margin-top: 1px; opacity: .8; }
+.toggle button { padding-block: 9px; line-height: 1.25; }
+.toggle { border-radius: 28px; }
+.toggle .knob, .toggle button { border-radius: 24px; }
+.offer { display: grid; gap: 28px; margin: 32px auto 0; max-width: 600px; }
+.gets-list { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--cream); }
+.gets-list li { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--rule-ink); font-size: 17px; font-variant-numeric: tabular-nums; }
+.gets-list b { font-family: var(--display); font-weight: 800; white-space: nowrap; text-align: right; }
+.gets-list .sum { border-bottom: 2px solid var(--cream); font-weight: 700; }
+.price-under { text-align: center; }
+.big { font-family: var(--display); font-size: clamp(72px, 11vw, 104px); font-weight: 800; letter-spacing: -.06em; line-height: .9; font-variant-numeric: tabular-nums; }
+.save { margin-top: 14px; font-size: 17px; color: var(--mute-on-ink); }
+.save b { color: var(--cream); }
+.per { font-size: 15px; color: var(--mute-on-ink); margin-top: 4px; }
+.pay { display: grid; gap: 10px; margin: 32px auto 0; max-width: 600px; }
+.pay-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; }
+.btn { display: flex; align-items: center; justify-content: center; text-align: center; min-height: 56px; padding: 12px 18px; border-radius: 99px; background: var(--cream); color: var(--ink); font-family: var(--display); font-size: 19px; font-weight: 800; letter-spacing: -.02em; text-decoration: none; }
+.btn-copy { font: inherit; font-size: 14px; font-weight: 700; min-height: 56px; padding: 0 16px; border-radius: 99px; border: 2px solid var(--cream); background: none; color: var(--cream); cursor: pointer; white-space: nowrap; }
+.pay-url { grid-column: 1 / -1; font-size: 13px; color: var(--mute-on-ink); overflow-wrap: anywhere; user-select: all; text-align: center; }
+.ready-col { max-width: 600px; margin-inline: auto; }
+.extras-h { margin-top: 56px; font-family: var(--display); font-size: 22px; font-weight: 800; letter-spacing: -.03em; }
+.extras { margin-top: 12px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.extra { background: var(--ink-2); border: 1px solid var(--rule-ink); padding: 14px; }
+@media (hover: hover) {
+  .extra { transition: transform .25s cubic-bezier(.2,.8,.2,1), background-color .25s ease, border-color .25s ease, box-shadow .25s ease; }
+  .extra:hover { transform: translateY(-6px); background: #33312d; border-color: var(--cream); box-shadow: 0 14px 28px rgba(0,0,0,.35); }
+}
+@media (prefers-reduced-motion: reduce) { .extra { transition: none; } .extra:hover { transform: none; } }
+.extra-t { font-size: 14px; color: var(--mute-on-ink); }
+.extra-p { font-family: var(--display); font-size: 28px; font-weight: 800; letter-spacing: -.03em; margin-top: 2px; }
+.extra-p s { font-family: var(--body); font-size: 14px; font-weight: 500; letter-spacing: 0; color: var(--mute-on-ink); margin-left: 6px; }
+.book { margin-top: 56px; font-size: 20px; font-weight: 600; line-height: 1.3; text-align: center; }
+.contact { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.chip { display: inline-flex; align-items: center; gap: 12px; border: 2px solid var(--cream); border-radius: 99px; padding: 8px 8px 8px 18px; font-weight: 700; font-size: 16px; min-width: 0; max-width: 100%; }
+.chip .val { user-select: all; min-width: 0; overflow-wrap: anywhere; }
+.chip.solid { background: var(--cream); color: var(--ink); }
+.chip button { font: inherit; font-size: 13px; font-weight: 700; border: 0; border-radius: 99px; padding: 9px 13px; cursor: pointer; background: var(--cream); color: var(--ink); flex: none; }
+.chip.solid button { background: var(--ink); color: var(--cream); }
+.fine { margin-top: 24px; font-size: 14px; color: var(--mute-on-ink); text-align: center; }
+footer { padding-block: 32px; border-top: 1px solid var(--rule-ink); }
+footer .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; color: var(--mute-on-ink); font-size: 13px; }
+footer .logo { width: 56px; color: var(--cream); }
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; overflow-x: clip; }
+  .knob { transition: transform .3s cubic-bezier(.2,.8,.2,1); }
+}
+@media (max-width: 520px) {
+  .topbar .logo { width: 52px; }
+  .toggle button { padding: 13px 20px; }
+}
+@media (min-width: 700px) {
+  .tiles { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+  .tile { min-height: 150px; padding: 18px 18px 22px; }
+  .now { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .tool { grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); column-gap: 28px; align-items: start; }
+  .tool h4 { grid-row: span 2; }
+  .tool-job { margin-top: 2px; }
+}
+@media (min-width: 960px) {
+  .step { display: grid; grid-template-columns: 250px minmax(0, 1fr); column-gap: 40px; padding-block: 24px 72px; }
+  .step-body { margin-top: 0; }
+  .month { grid-template-columns: 200px minmax(0, 1fr); gap: 32px; align-items: start; }
+}
+</style>
+
+<header class="hero wrap" id="top">
+  <div class="hero-bg" aria-hidden="true"><video id="intro" muted playsinline preload="auto" poster="day2night-end.jpg" src="day2night.mp4"></video></div>
+  <div class="topbar">
+    <a class="logo" href="https://shotbyfvm.com" target="_blank" rel="noopener" aria-label="shotbyfvm website"><svg width="100%" style="display:block" aria-hidden="true" viewBox="0 0 240 200" aria-label="Faith Vision Media" fill="none"><title>Faith Vision Media</title><rect x="20" y="40" width="200" height="110" rx="14" stroke="currentColor" stroke-width="4"></rect><path d="M95 40 L103 26 L137 26 L145 40" stroke="currentColor" stroke-width="4" stroke-linejoin="round"></path><rect x="180" y="30" width="18" height="10" rx="2" fill="currentColor"></rect><rect x="117" y="4" width="6" height="34" fill="currentColor"></rect><rect x="108" y="12" width="24" height="5" fill="currentColor"></rect><path d="M55.39 118Q55.22 118 55.22 117.62Q55.22 117.23 55.39 117.23Q57.64 117.23 58.74 116.91Q59.84 116.59 60.21 115.63Q60.58 114.67 60.58 112.82V83.18Q60.58 81.33 60.23 80.4Q59.88 79.47 58.85 79.12Q57.82 78.77 55.72 78.77Q55.54 78.77 55.54 78.38Q55.54 78 55.72 78H82.36Q82.98 78 82.98 78.58L83.11 86.88Q83.11 87.02 82.78 87.07Q82.45 87.12 82.36 86.92Q81.62 83.27 79.38 81.48Q77.14 79.68 73.49 79.68H70.88Q68.54 79.68 67.6 80.49Q66.66 81.31 66.66 83.25V112.56Q66.66 114.48 67.18 115.47Q67.7 116.46 69.24 116.85Q70.79 117.23 73.83 117.23Q73.97 117.23 73.97 117.62Q73.97 118 73.83 118Q71.68 118 69.19 117.94Q66.7 117.87 63.47 117.87Q61.23 117.87 59.13 117.94Q57.02 118 55.39 118ZM79.14 104.24Q79.14 101.59 77.33 100.18Q75.51 98.78 71.8 98.78H63.76V97.14H71.92Q75.57 97.14 77.33 95.89Q79.08 94.63 79.08 92.36Q79.08 92.23 79.46 92.23Q79.85 92.23 79.85 92.36Q79.85 94.44 79.81 95.58Q79.78 96.72 79.78 97.97Q79.78 99.52 79.85 101.01Q79.91 102.5 79.91 104.24Q79.91 104.41 79.53 104.41Q79.14 104.41 79.14 104.24Z M130.84 78Q131.03 78 131.03 78.38Q131.03 78.77 130.84 78.77Q128.58 78.77 126.66 80.48Q124.73 82.2 123.49 85.46L111.03 117.94Q110.97 118.19 110.36 118.19Q109.75 118.19 109.63 117.94L93.45 83.31Q92.36 81 91.19 79.88Q90.02 78.77 88.39 78.77Q88.2 78.77 88.2 78.38Q88.2 78 88.39 78Q89.19 78 89.75 78.06Q90.31 78.13 91.09 78.16Q91.88 78.19 93.27 78.19Q96.29 78.19 98.27 78.16Q100.24 78.13 101.56 78.06Q102.87 78 103.87 78Q104.07 78 104.07 78.38Q104.07 78.77 103.87 78.77Q101.21 78.77 100.28 80.1Q99.35 81.44 100.53 83.97L112.92 110.69L110.26 115.14L121.82 85.21Q122.9 82.32 121.92 80.55Q120.94 78.77 117.68 78.77Q117.48 78.77 117.48 78.38Q117.48 78 117.68 78Q119.43 78 121.01 78.1Q122.6 78.19 125.19 78.19Q127 78.19 128.12 78.1Q129.24 78 130.84 78Z M140.1 110.28 140.74 79.47 142.47 79.6 141.8 110.28Q141.74 113.63 143.09 115.43Q144.44 117.23 147.23 117.23Q147.4 117.23 147.4 117.62Q147.4 118 147.23 118Q145.82 118 144.34 117.94Q142.86 117.87 141.02 117.87Q139.11 117.87 137.52 117.94Q135.92 118 134.55 118Q134.38 118 134.38 117.62Q134.38 117.23 134.55 117.23Q137.19 117.23 138.62 115.43Q140.04 113.63 140.1 110.28ZM185.41 117.23Q185.56 117.23 185.56 117.62Q185.56 118 185.41 118Q183.79 118 181.74 117.94Q179.68 117.87 177.43 117.87Q175.17 117.87 173.23 117.94Q171.29 118 169.71 118Q169.54 118 169.54 117.62Q169.54 117.23 169.71 117.23Q172.77 117.23 173.65 116.4Q174.53 115.57 174.36 112.82L172.98 83.54L175.85 79.17L159.41 117.55Q159.35 117.81 158.92 117.81Q158.5 117.81 158.37 117.55L141.04 83.31Q138.71 78.77 135 78.77Q134.83 78.77 134.83 78.38Q134.83 78 135 78Q136.24 78 137.6 78.06Q138.97 78.13 139.91 78.13Q141.36 78.13 142.48 78.06Q143.59 78 144.21 78Q145.1 78 145.59 78.62Q146.08 79.24 147.15 81.33L161.58 109.53L158.8 114.44L173.99 79.6Q174.35 78.76 174.8 78.38Q175.25 78 175.91 78Q176.46 78 177.14 78.06Q177.83 78.13 178.76 78.13Q180.7 78.13 182.02 78.06Q183.35 78 184.69 78Q184.86 78 184.86 78.38Q184.86 78.77 184.69 78.77Q181.69 78.77 180.29 79.87Q178.88 80.97 179 83.57L180.44 112.82Q180.55 114.67 180.92 115.63Q181.29 116.59 182.32 116.91Q183.35 117.23 185.41 117.23Z" fill="currentColor"></path><path d="M70.03 185V170.8H72.98L77.21 182.46L81.43 170.8H84.38V185H82.22V174.6L78.4 184.99H76.01L72.19 174.6V185Z M97.83 185V170.8H107.07V172.77H99.99V176.91H106.83V178.85H99.99V183.03H107.23V185Z M120.01 185V170.8H124.57Q127.91 170.8 129.71 172.65Q131.51 174.5 131.51 177.92Q131.51 181.32 129.74 183.16Q127.97 185 124.69 185ZM122.17 183.03H124.57Q126.93 183.03 128.1 181.76Q129.27 180.48 129.27 177.92Q129.27 175.32 128.1 174.04Q126.93 172.77 124.57 172.77H122.17Z M144.03 185V170.8H146.19V185Z M158.3 185 163.42 170.8H166.17L171.29 185H168.99L167.69 181.3H161.9L160.6 185ZM162.57 179.35H167.02L164.8 172.86Z" fill="currentColor"></path></svg></a>
+    <div class="meta">November 12, 2026</div>
+  </div>
+  <div class="hero-main">
+    <p class="prepared">A proposal for</p>
+    <h1 class="name" aria-label="Enas Latif"><span class="line" data-split>Enas</span><span class="line" data-split>Latif</span></h1>
+    <div class="rule"></div>
+    <p class="sub">Filmed and edited for social by <b>shotbyfvm</b>.</p>
+  </div>
+  <a class="cue" href="#how">See the plan
+    <svg viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1v11M2 7l5 5 5-5" stroke="currentColor" stroke-width="2"/></svg>
+  </a>
+</header>
+
+<main>
+<section class="band paper" id="how">
+  <div class="wrap">
+    <h2>Two ways to work together</h2>
+    <div class="tracks">
+      <div>
+        <h3 class="track-h">Option 1: Content bundle</h3>
+        <ol class="tiles">
+          <li class="tile"><span class="tile-n">1</span><b class="tile-t">Choose the bundle</b><span class="tile-d">Pay for the month up front. Your month begins.</span></li>
+          <li class="tile"><span class="tile-n">2</span><b class="tile-t">Book your dates</b><span class="tile-d">Text me the days that work.</span></li>
+          <li class="tile"><span class="tile-n">3</span><b class="tile-t">Shoot + edit</b><span class="tile-d">Back in 3–5 days.</span></li>
+          <li class="tile"><span class="tile-n">4</span><b class="tile-t">Need more?</b><span class="tile-d">Extras at bundle rates.</span></li>
+        </ol>
+      </div>
+      <div>
+        <h3 class="track-h">Option 2: Pay per shoot</h3>
+        <ol class="tiles">
+          <li class="tile"><span class="tile-n">1</span><b class="tile-t">Send a date</b><span class="tile-d">Whenever you need a shoot.</span></li>
+          <li class="tile"><span class="tile-n">2</span><b class="tile-t">Pay to book</b><span class="tile-d">Paid in full to confirm.</span></li>
+          <li class="tile"><span class="tile-n">3</span><b class="tile-t">Shoot day</b><span class="tile-d">Studio, podcast or around Buffalo.</span></li>
+          <li class="tile"><span class="tile-n">4</span><b class="tile-t">Delivered</b><span class="tile-d">3–5 days, or next day for +$100.</span></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="bundle">
+  <div class="wrap">
+    <h2>Option 1: The content bundle</h2>
+    <ol class="steps">
+      <li class="step">
+        <div>
+          <p class="step-tag">Step 1</p>
+          <h3 class="step-h">Where you are now</h3>
+        </div>
+        <div class="step-body">
+          <p class="lead">The goal: turn your followers and new viewers into buyers and sellers who reach out.</p>
+          <div class="now">
+            <div class="now-card good">
+              <h4>Working for you</h4>
+              <ul>
+                <li>6,400+ followers who already know your face</li>
+                <li>Top 1% and 25 years in Buffalo and Tampa</li>
+                <li>Your own TV segment and podcast</li>
+              </ul>
+            </div>
+            <div class="now-card gap">
+              <h4>Holding you back</h4>
+              <ul>
+                <li>Most reels speak to other agents and business owners</li>
+                <li>No clear next step for someone ready to buy or sell</li>
+                <li>Little Buffalo content for people searching the area</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="step">
+        <div>
+          <p class="step-tag">Step 2</p>
+          <h3 class="step-h">The tools</h3>
+        </div>
+        <div class="step-body">
+          <p class="lead">Four kinds of video, each with one job.</p>
+          <div class="tools">
+            <div class="tool"><h4>Talk show shoot</h4><p class="tool-what">I film your morning segment in studio on 2 cameras. You get the full segment + 3 reels.</p><p class="tool-job">Builds trust.</p></div>
+            <div class="tool"><h4>Podcast production</h4><p class="tool-what">2 camera angles, a full episode edit + 3 clips.</p><p class="tool-job">Answers the questions buyers and sellers ask.</p></div>
+            <div class="tool"><h4>Lifestyle day</h4><p class="tool-what">Up to 3 hours around one of your listings, ending on the home itself. 3 vertical reels and 1 horizontal video for YouTube.</p><p class="tool-job">Sellers see how you market a home. Buyers fall for the area first.</p></div>
+            <div class="tool"><h4>Buffalo reels</h4><p class="tool-what">I follow you downtown and through the neighborhoods as you show the best places to eat, hang out and live. 30–60 sec each.</p><p class="tool-job">Gets you found by people searching where to live in Buffalo.</p></div>
+          </div>
+          <div class="month">
+            <div>
+              <h4 class="sub-h">The plan</h4>
+              <div class="total">24</div>
+              <div class="total-l">videos a month</div>
+              <p class="total-s">Each one is made to post on Instagram, TikTok, Facebook and YouTube.</p>
+            </div>
+            <ul class="incl">
+              <li><span>Up to 2 talk show shoots</span><span class="incl-r">2 segments + 6 reels</span></li>
+              <li><span>Up to 2 podcast episodes</span><span class="incl-r">2 episodes + 6 clips</span></li>
+              <li><span>Up to 1 lifestyle day</span><span class="incl-r">3 vertical reels + 1 horizontal video</span></li>
+              <li><span>Up to 4 Buffalo reels</span><span class="incl-r">4 reels</span></li>
+              <li><span>Hooks, captions and YouTube titles</span><span class="incl-r">Written for every video</span></li>
+              <li><span>Monthly results check-in</span><span class="incl-r">Comments, DMs and calls</span></li>
+              <li><span>Script help, travel and 2 revisions</span><span class="incl-r">Included</span></li>
+              <li><span>Listing photos, video and photo + video packages</span><span class="incl-r">25% off while your bundle is active, 30% with 3 months</span></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li class="step">
+        <div>
+          <p class="step-tag">Step 3</p>
+          <h3 class="step-h">How views become leads</h3>
+        </div>
+        <div class="step-body">
+          <ol class="tiles">
+            <li class="tile"><span class="tile-n">1</span><b class="tile-t">One clear ask</b><span class="tile-d">Every video ends with one: "Comment BUFFALO for my neighborhood guide."</span></li>
+            <li class="tile"><span class="tile-n">2</span><b class="tile-t">Free guide by DM</b><span class="tile-d">A Buffalo neighborhood guide or a Buffalo-to-Tampa moving guide.</span></li>
+            <li class="tile"><span class="tile-n">3</span><b class="tile-t">Book a call</b><span class="tile-d">The guide links to a call with you.</span></li>
+            <li class="tile"><span class="tile-n">4</span><b class="tile-t">Track it</b><span class="tile-d">Each month we count comments, DMs and calls, and do more of what works.</span></li>
+          </ol>
+          <p class="closing">You answer the DMs and take the calls. The videos bring them to you.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="band paper" id="per-shoot">
+  <div class="wrap">
+    <h2>Option 2: Pay per shoot</h2>
+    <div class="ledger">
+      <div class="lrow"><div><h3>Lifestyle day</h3><p>Up to 3 hours, 3 vertical reels + 1 horizontal video</p></div><div class="amt">$375</div></div>
+      <div class="lrow"><div><h3>Podcast production</h3><p>Up to 60 min, full edit + 3 clips</p></div><div class="amt">$350</div></div>
+      <div class="lrow"><div><h3>Talk show shoot</h3><p>Full segment edit + 3 reels</p></div><div class="amt">$320</div></div>
+      <div class="lrow"><div><h3>Buffalo reel</h3><p>3 for $525</p></div><div class="amt">$190</div></div>
+      <div class="lrow sm"><div><h3>Podcast edit only</h3><p>You send the footage</p></div><div class="amt">$120</div></div>
+      <div class="lrow sm"><div><h3>Next-day delivery</h3><p>Any shoot</p></div><div class="amt">+$100</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="price">
+  <div class="wrap">
+    <div class="ready-top">
+      <h2>Ready when you are</h2>
+      <div class="toggle" id="toggle" data-v="1" role="group" aria-label="Bundle length">
+        <span class="knob" aria-hidden="true"></span>
+        <button type="button" data-v="1" aria-pressed="true">1 month<small>one month at a time</small></button>
+        <button type="button" data-v="3" aria-pressed="false">3 months<small>paid in advance</small></button>
+      </div>
+    </div>
+    <div class="offer swap" id="offer-out">
+      <ul class="gets-list" id="o-list"></ul>
+      <div class="price-under">
+        <div class="big" id="o-price">$2,025</div>
+        <div class="save"><span id="o-was">$2,475 per shoot.</span> <b id="o-save">You save $450.</b></div>
+        <div class="per" id="o-per">Paid in full to start.</div>
+      </div>
+    </div>
+    <div class="pay" id="pay" hidden>
+      <div class="pay-row" data-pay="one" hidden>
+        <a class="btn" target="_blank" rel="noopener">Start 1 month: $2,025</a>
+        <button class="btn-copy" type="button" aria-label="Copy the 1 month payment link">Copy link</button>
+        <span class="pay-url" hidden></span>
+      </div>
+      <div class="pay-row" data-pay="three" hidden>
+        <a class="btn" target="_blank" rel="noopener">Pay 3 months in advance: $5,550</a>
+        <button class="btn-copy" type="button" aria-label="Copy the 3 months payment link">Copy link</button>
+        <span class="pay-url" hidden></span>
+      </div>
+    </div>
+    <div class="ready-col">
+    <h3 class="extras-h">Extras once your bundle is used</h3>
+    <div class="extras">
+      <div class="extra"><div class="extra-t">Talk show shoot</div><div class="extra-p">$220<s>$320</s></div></div>
+      <div class="extra"><div class="extra-t">Podcast episode</div><div class="extra-p">$260<s>$350</s></div></div>
+      <div class="extra"><div class="extra-t">Lifestyle day</div><div class="extra-p">$245<s>$375</s></div></div>
+      <div class="extra"><div class="extra-t">Buffalo reel</div><div class="extra-p">$120<s>$190</s></div></div>
+    </div>
+    <p class="book" id="book-line">To book either option, text or call me.</p>
+    <div class="contact">
+      <span class="chip solid"><span class="val" id="phone">716-560-6487</span><button type="button" data-copy="phone">Copy</button></span>
+    </div>
+    <p class="fine">Valid through December 12, 2026.<span id="invoice-note"> A card invoice is sent when you book.</span></p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="https://shotbyfvm.com" target="_blank" rel="noopener" aria-label="shotbyfvm website"><svg width="100%" style="display:block" aria-hidden="true" viewBox="0 0 240 200" aria-label="Faith Vision Media" fill="none"><title>Faith Vision Media</title><rect x="20" y="40" width="200" height="110" rx="14" stroke="currentColor" stroke-width="4"></rect><path d="M95 40 L103 26 L137 26 L145 40" stroke="currentColor" stroke-width="4" stroke-linejoin="round"></path><rect x="180" y="30" width="18" height="10" rx="2" fill="currentColor"></rect><rect x="117" y="4" width="6" height="34" fill="currentColor"></rect><rect x="108" y="12" width="24" height="5" fill="currentColor"></rect><path d="M55.39 118Q55.22 118 55.22 117.62Q55.22 117.23 55.39 117.23Q57.64 117.23 58.74 116.91Q59.84 116.59 60.21 115.63Q60.58 114.67 60.58 112.82V83.18Q60.58 81.33 60.23 80.4Q59.88 79.47 58.85 79.12Q57.82 78.77 55.72 78.77Q55.54 78.77 55.54 78.38Q55.54 78 55.72 78H82.36Q82.98 78 82.98 78.58L83.11 86.88Q83.11 87.02 82.78 87.07Q82.45 87.12 82.36 86.92Q81.62 83.27 79.38 81.48Q77.14 79.68 73.49 79.68H70.88Q68.54 79.68 67.6 80.49Q66.66 81.31 66.66 83.25V112.56Q66.66 114.48 67.18 115.47Q67.7 116.46 69.24 116.85Q70.79 117.23 73.83 117.23Q73.97 117.23 73.97 117.62Q73.97 118 73.83 118Q71.68 118 69.19 117.94Q66.7 117.87 63.47 117.87Q61.23 117.87 59.13 117.94Q57.02 118 55.39 118ZM79.14 104.24Q79.14 101.59 77.33 100.18Q75.51 98.78 71.8 98.78H63.76V97.14H71.92Q75.57 97.14 77.33 95.89Q79.08 94.63 79.08 92.36Q79.08 92.23 79.46 92.23Q79.85 92.23 79.85 92.36Q79.85 94.44 79.81 95.58Q79.78 96.72 79.78 97.97Q79.78 99.52 79.85 101.01Q79.91 102.5 79.91 104.24Q79.91 104.41 79.53 104.41Q79.14 104.41 79.14 104.24Z M130.84 78Q131.03 78 131.03 78.38Q131.03 78.77 130.84 78.77Q128.58 78.77 126.66 80.48Q124.73 82.2 123.49 85.46L111.03 117.94Q110.97 118.19 110.36 118.19Q109.75 118.19 109.63 117.94L93.45 83.31Q92.36 81 91.19 79.88Q90.02 78.77 88.39 78.77Q88.2 78.77 88.2 78.38Q88.2 78 88.39 78Q89.19 78 89.75 78.06Q90.31 78.13 91.09 78.16Q91.88 78.19 93.27 78.19Q96.29 78.19 98.27 78.16Q100.24 78.13 101.56 78.06Q102.87 78 103.87 78Q104.07 78 104.07 78.38Q104.07 78.77 103.87 78.77Q101.21 78.77 100.28 80.1Q99.35 81.44 100.53 83.97L112.92 110.69L110.26 115.14L121.82 85.21Q122.9 82.32 121.92 80.55Q120.94 78.77 117.68 78.77Q117.48 78.77 117.48 78.38Q117.48 78 117.68 78Q119.43 78 121.01 78.1Q122.6 78.19 125.19 78.19Q127 78.19 128.12 78.1Q129.24 78 130.84 78Z M140.1 110.28 140.74 79.47 142.47 79.6 141.8 110.28Q141.74 113.63 143.09 115.43Q144.44 117.23 147.23 117.23Q147.4 117.23 147.4 117.62Q147.4 118 147.23 118Q145.82 118 144.34 117.94Q142.86 117.87 141.02 117.87Q139.11 117.87 137.52 117.94Q135.92 118 134.55 118Q134.38 118 134.38 117.62Q134.38 117.23 134.55 117.23Q137.19 117.23 138.62 115.43Q140.04 113.63 140.1 110.28ZM185.41 117.23Q185.56 117.23 185.56 117.62Q185.56 118 185.41 118Q183.79 118 181.74 117.94Q179.68 117.87 177.43 117.87Q175.17 117.87 173.23 117.94Q171.29 118 169.71 118Q169.54 118 169.54 117.62Q169.54 117.23 169.71 117.23Q172.77 117.23 173.65 116.4Q174.53 115.57 174.36 112.82L172.98 83.54L175.85 79.17L159.41 117.55Q159.35 117.81 158.92 117.81Q158.5 117.81 158.37 117.55L141.04 83.31Q138.71 78.77 135 78.77Q134.83 78.77 134.83 78.38Q134.83 78 135 78Q136.24 78 137.6 78.06Q138.97 78.13 139.91 78.13Q141.36 78.13 142.48 78.06Q143.59 78 144.21 78Q145.1 78 145.59 78.62Q146.08 79.24 147.15 81.33L161.58 109.53L158.8 114.44L173.99 79.6Q174.35 78.76 174.8 78.38Q175.25 78 175.91 78Q176.46 78 177.14 78.06Q177.83 78.13 178.76 78.13Q180.7 78.13 182.02 78.06Q183.35 78 184.69 78Q184.86 78 184.86 78.38Q184.86 78.77 184.69 78.77Q181.69 78.77 180.29 79.87Q178.88 80.97 179 83.57L180.44 112.82Q180.55 114.67 180.92 115.63Q181.29 116.59 182.32 116.91Q183.35 117.23 185.41 117.23Z" fill="currentColor"></path><path d="M70.03 185V170.8H72.98L77.21 182.46L81.43 170.8H84.38V185H82.22V174.6L78.4 184.99H76.01L72.19 174.6V185Z M97.83 185V170.8H107.07V172.77H99.99V176.91H106.83V178.85H99.99V183.03H107.23V185Z M120.01 185V170.8H124.57Q127.91 170.8 129.71 172.65Q131.51 174.5 131.51 177.92Q131.51 181.32 129.74 183.16Q127.97 185 124.69 185ZM122.17 183.03H124.57Q126.93 183.03 128.1 181.76Q129.27 180.48 129.27 177.92Q129.27 175.32 128.1 174.04Q126.93 172.77 124.57 172.77H122.17Z M144.03 185V170.8H146.19V185Z M158.3 185 163.42 170.8H166.17L171.29 185H168.99L167.69 181.3H161.9L160.6 185ZM162.57 179.35H167.02L164.8 172.86Z" fill="currentColor"></path></svg></a>
+    <span>shotbyfvm, Buffalo NY</span>
+  </div>
+</footer>
+
+<script>
+// Payment links. Leave empty until ready: the payment block stays hidden while a link is empty.
+const PAY = { one: 'https://square.link/u/wlSzEZo4', three: 'https://square.link/u/IGZfROYl' };
+
+const root = document.documentElement;
+root.classList.add('js');
+(function intro() {
+  const v = document.getElementById('intro');
+  let done = false;
+  const reveal = () => { if (done) return; done = true; root.classList.remove('wait'); root.classList.add('go'); };
+  if (!v || matchMedia('(prefers-reduced-motion: reduce)').matches) { reveal(); return; }
+  root.classList.add('wait');
+  v.addEventListener('ended', reveal);
+  v.addEventListener('error', reveal);
+  const pr = v.play(); if (pr && pr.catch) pr.catch(reveal);
+  setTimeout(() => { if (v.currentTime === 0) reveal(); }, 2500);
+  setTimeout(reveal, 7000);
+})();
+let i = 0;
+document.querySelectorAll('[data-split]').forEach(el => {
+  const t = el.textContent; el.textContent = '';
+  for (const c of t) { const s = document.createElement('span'); s.className = 'ch'; s.setAttribute('aria-hidden', 'true'); s.style.setProperty('--i', i++); s.textContent = c; el.appendChild(s); }
+});
+
+// Copy: clipboard first, fall back to selecting the text so it can be copied by hand.
+function copyText(text, btn, label, fallbackEl) {
+  const done = () => { btn.textContent = 'Copied'; setTimeout(() => btn.textContent = label, 1600); };
+  const fallback = () => { fallbackEl.hidden = false; getSelection().selectAllChildren(fallbackEl); };
+  try { navigator.clipboard.writeText(text).then(done, fallback); } catch (e) { fallback(); }
+}
+document.querySelectorAll('[data-copy]').forEach(b => b.addEventListener('click', () => {
+  const el = document.getElementById(b.dataset.copy);
+  copyText(el.textContent, b, 'Copy', el);
+}));
+
+// Payment block: each button shows once its link is set.
+const payReady = Boolean(PAY.one || PAY.three);
+if (payReady) {
+  document.querySelectorAll('[data-pay]').forEach(row => {
+    const url = PAY[row.dataset.pay]; if (!url) return;
+    const copy = row.querySelector('.btn-copy'), shown = row.querySelector('.pay-url');
+    row.querySelector('.btn').href = url;
+    shown.textContent = url;
+    copy.addEventListener('click', () => copyText(url, copy, 'Copy link', shown));
+    row.dataset.ready = '1';
+  });
+  document.getElementById('pay').hidden = false;
+  document.getElementById('invoice-note').hidden = true;
+  document.getElementById('book-line').textContent = PAY.one && PAY.three ? 'Booking single shoots? Text or call me.' : (PAY.one ? 'For 3 months or single shoots, text or call me.' : 'For 1 month or single shoots, text or call me.');
+}
+
+const plans = {
+  1: { price: '$2,025', was: '$2,475 per shoot.', save: 'You save $450.', per: 'Paid in full to start.',
+       rows: [['Talk show shoots', 'Up to 2'], ['Podcast episodes', 'Up to 2'], ['Lifestyle days', 'Up to 1'], ['Buffalo reels', 'Up to 4'], ['Listing photos and video, while your bundle is active', '25% off'], ['Videos', 'Up to 24']] },
+  3: { price: '$5,550', was: '$7,800 per shoot.', save: 'You save $2,250.', per: '$1,850 a month. Pay once up front for all 3 months.',
+       rows: [['Talk show shoots', 'Up to 2 a month'], ['Podcast episodes', 'Up to 2 a month'], ['Lifestyle days', 'Up to 1 a month + 1 free'], ['Buffalo reels', 'Up to 4 a month'], ['Listing photos and video, while your bundle is active', '30% off'], ['Videos', 'Up to 24 a month, 76 in all']] }
+};
+const tg = document.getElementById('toggle'), out = document.getElementById('offer-out');
+function show(v, animate) {
+  const p = plans[v];
+  const apply = () => {
+    document.getElementById('o-price').textContent = p.price;
+    document.getElementById('o-was').textContent = p.was;
+    document.getElementById('o-save').textContent = p.save;
+    document.getElementById('o-per').textContent = p.per;
+    document.getElementById('o-list').innerHTML = p.rows.map(r => `<li class="${r[0] === 'Videos' ? 'sum' : ''}"><span>${r[0]}</span><b>${r[1]}</b></li>`).join('');
+    out.style.opacity = 1;
+  };
+  tg.dataset.v = v;
+  document.querySelectorAll('[data-pay]').forEach(r => { r.hidden = !(r.dataset.ready && r.dataset.pay === (v == 3 ? 'three' : 'one')); });
+  tg.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b.dataset.v == v));
+  if (animate && !matchMedia('(prefers-reduced-motion: reduce)').matches) { out.style.opacity = 0; setTimeout(apply, 180); } else apply();
+}
+tg.querySelectorAll('button').forEach(b => b.addEventListener('click', () => show(b.dataset.v, true)));
+show(1, false);
+</script>
+
+</html>

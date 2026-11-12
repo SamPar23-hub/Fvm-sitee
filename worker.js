@@ -12,6 +12,9 @@ export default {
     if (p === "/rates" || p === "/rates/") return new Response(PRICING, { headers: { "content-type": "text/html; charset=utf-8", "cache-control": "private, max-age=300", "x-robots-tag": "noindex, nofollow", ...H } });
     if (p === "/favicon.svg") return new Response(ICON, { headers: { "content-type": "image/svg+xml", ...H } });
     if (p === "/robots.txt") return new Response("User-agent: *\nAllow: /\n", { headers: { "content-type": "text/plain", ...H } });
+    // Client proposal at /enas: static files in public/enas/, not linked and not indexed (see public/_headers).
+    // Requests only reach here when no static file matched, e.g. /Enas with a capital letter.
+    if (/^\/enas\/?$/i.test(p) && p !== "/enas/") return Response.redirect(new URL("/enas/", req.url).toString(), 302);
     return Response.redirect(new URL("/", req.url).toString(), 302);
   }
 };
