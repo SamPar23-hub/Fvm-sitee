@@ -184,6 +184,12 @@ h3, h4, p { margin: 0; }
 .chip.solid { background: var(--cream); color: var(--ink); }
 .chip button { font: inherit; font-size: 13px; font-weight: 700; border: 0; border-radius: 99px; padding: 9px 13px; cursor: pointer; background: var(--cream); color: var(--ink); flex: none; }
 .chip.solid button { background: var(--ink); color: var(--cream); }
+@media (hover: hover) {
+  .chip { transition: transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s ease, background-color .25s ease; }
+  .chip:hover { transform: translateY(-4px); box-shadow: 0 14px 28px rgba(0,0,0,.4); }
+  .chip.solid:hover { background: #fff8ea; }
+}
+@media (prefers-reduced-motion: reduce) { .chip { transition: none; } .chip:hover { transform: none; } }
 .fine { margin-top: 24px; font-size: 14px; color: var(--mute-on-ink); text-align: center; }
 footer { padding-block: 32px; border-top: 1px solid var(--rule-ink); }
 footer .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; color: var(--mute-on-ink); font-size: 13px; }
