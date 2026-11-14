@@ -1,0 +1,8 @@
+# Enas Latif proposal, served on its own subdomain so main-site deploys cannot remove it.
+# Deploy from this folder with: npx wrangler deploy
+name = "fvm-enas-proposal"
+compatibility_date = "2026-10-01"
+routes = [{ pattern = "enas.shotbyfvm.com", custom_domain = true }]
+
+[assets]
+directory = "./public"
