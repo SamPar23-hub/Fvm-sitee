@@ -1,11 +1,11 @@
-# Enas Latif proposal, served on its own subdomain so main-site deploys cannot remove it.
-# Deploy from this folder with: npx wrangler deploy
+# Enas Latif proposal at shotbyfvm.com/enas. It is its own Worker, so deploys of the
+# main site cannot remove it. Deploy from this folder with: npx wrangler deploy
 name = "fvm-enas-proposal"
 main = "worker.js"
 compatibility_date = "2026-10-01"
+workers_dev = false
+preview_urls = false
 routes = [
-  { pattern = "enas.shotbyfvm.com", custom_domain = true },
-  # Old link: these paths on the main domain forward to the subdomain.
   { pattern = "shotbyfvm.com/enas*", zone_name = "shotbyfvm.com" },
   { pattern = "shotbyfvm.com/Enas*", zone_name = "shotbyfvm.com" },
   { pattern = "shotbyfvm.com/ENAS*", zone_name = "shotbyfvm.com" },
@@ -14,3 +14,4 @@ routes = [
 [assets]
 directory = "./public"
 binding = "ASSETS"
+run_worker_first = true
