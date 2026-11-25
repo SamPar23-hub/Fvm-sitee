@@ -170,6 +170,10 @@ def build_ass(words, total, cap, title, W=1080, H=1920):
     styles = [("Cap", st)]
     if title:
         styles.append(("Title", cap["title_style"]))
+    wm = cap.get("watermark")
+    if wm:
+        styles.append(("Mark", {"font": wm.get("font", "Barlow Condensed SemiBold"), "size": wm.get("size", 26),
+                                "shadow": 1, "shadow_alpha": 140, "align": 5, "spacing": 1}))
     lines = ["[Script Info]", "ScriptType: v4.00+", f"PlayResX: {W}", f"PlayResY: {H}", "WrapStyle: 0",
              "ScaledBorderAndShadow: yes", "", "[V4+ Styles]",
              "Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, "
@@ -216,6 +220,17 @@ def build_ass(words, total, cap, title, W=1080, H=1920):
         ts = cap["title_style"]
         tpos = f"\\pos({W // 2},{int(ts['y'] * H)})"
         ev.append((0, min(total, cap.get("title_secs", 4.0)), "Title", f"{{{tpos}\\fad(150,200)}}{title}"))
+    if wm:  # Instagram glyph + @handle, whole video (style E)
+        x, y = int(wm["x"] * W), int(wm["y"] * H)
+        k = wm.get("icon", 40) / 34
+        box = "m 8 0 l 26 0 b 31 0 34 3 34 8 l 34 26 b 34 31 31 34 26 34 l 8 34 b 3 34 0 31 0 26 l 0 8 b 0 3 3 0 8 0"
+        ring = "m 17 9 b 21.4 9 25 12.6 25 17 b 25 21.4 21.4 25 17 25 b 12.6 25 9 21.4 9 17 b 9 12.6 12.6 9 17 9"
+        dot = "m 26 6 b 27.4 6 28 6.6 28 8 b 28 9.4 27.4 10 26 10 b 24.6 10 24 9.4 24 8 b 24 6.6 24.6 6 26 6"
+        sc = f"\\fscx{int(k * 100)}\\fscy{int(k * 100)}"
+        icon = f"\\an5\\pos({x},{y}){sc}\\1a&HFF&\\3c&HFFFFFF&\\bord2.2\\shad0"
+        ev.append((0, total, "Mark", f"{{{icon}\\p1}}{box} {ring}{{\\p0}}"))
+        ev.append((0, total, "Mark", f"{{\\an5\\pos({x},{y}){sc}\\bord0\\shad0\\p1}}{dot}{{\\p0}}"))
+        ev.append((0, total, "Mark", f"{{\\an5\\pos({x},{y + int(wm.get('icon', 40) * 0.95)})}}{wm['handle']}"))
     for s, e, sty, txt in ev:
         lines.append(f"Dialogue: 0,{ass_time(s)},{ass_time(min(e, total))},{sty},,0,0,0,,{txt}")
     return "\n".join(lines) + "\n"
