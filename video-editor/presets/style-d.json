@@ -1,0 +1,41 @@
+{
+  "name": "Cinematic Statement",
+  "cut": {
+    "max_pause": 0.45,
+    "pad_in": 0.08,
+    "pad_out": 0.25,
+    "drop_fillers": true
+  },
+  "video": {
+    "punch_in": [
+      1.0,
+      1.04
+    ],
+    "crop_y": 0.4,
+    "fps": 30,
+    "post": "drawbox=x=0:y=0:w=iw:h=ih*0.3:color=black:t=fill,drawbox=x=0:y=ih*0.7:w=iw:h=ih*0.3:color=black:t=fill"
+  },
+  "grade": {
+    "ffmpeg": "eq=brightness=-0.06:contrast=1.12:saturation=0.88,curves=master='0/0 0.25/0.19 0.5/0.44 0.85/0.78 1/0.9'"
+  },
+  "audio": {
+    "chain": "highpass=f=80,afftdn=nf=-25,acompressor=threshold=-20dB:ratio=3:attack=5:release=80:makeup=2,alimiter=limit=0.89",
+    "lufs": -14
+  },
+  "captions": {
+    "mode": "stack",
+    "max_words": 4,
+    "uppercase": true,
+    "style": {
+      "color": "#FFFFFF",
+      "shadow": 4,
+      "shadow_alpha": 96,
+      "outline": 0,
+      "align": 5,
+      "font": "Archivo Black",
+      "size": 128,
+      "y": 0.42,
+      "spacing": -2
+    }
+  }
+}

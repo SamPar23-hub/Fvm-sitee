@@ -1,0 +1,8 @@
+work/
+*.mp4
+*.mov
+*.f32
+assets/music/*
+!assets/music/.gitkeep
+__pycache__/
+.venv/
